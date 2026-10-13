@@ -1,5 +1,7 @@
 # Predictive maintenance Streamlit app
 
+https://predictive-maintenance-app-afbemfbsnoojxdfb7jbtes.streamlit.app/
+
 An interactive interface for the saved Random Forest from the student's Colab notebook. Enter five sensor readings, press **Predict and explain**, and view the model score, failure alert, and exact SHAP explanations. The saved cutoff is 0.3. No retraining is performed.
 
 ## Interactive views
