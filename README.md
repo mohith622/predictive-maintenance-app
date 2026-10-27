@@ -13,62 +13,12 @@ An interactive interface for the saved Random Forest from the student's Colab no
 
 The main input form updates only when **Predict and explain** is pressed. The result is labelled **Last submitted prediction**. A scenario does not overwrite those submitted readings. Selecting an example clears the earlier result until the example is submitted.
 
-## Update your existing GitHub deployment
-
-1. Extract the updated ZIP.
-2. Open `mohith622/predictive-maintenance-app` on GitHub.
-3. Use **Add file → Upload files** to upload the updated `app.py`, `requirements.txt`, and `README.md` at the same top-level paths, replacing their existing versions. The model file in this ZIP is unchanged.
-4. Commit the change. Streamlit normally rebuilds when the dependency file changes.
-5. Ensure the deployment uses **Python 3.12**. If its logs show Python 3.14, recreate the Streamlit deployment and explicitly select Python 3.12 in **Advanced settings** before deploying. The GitHub repository is reused.
-6. In the running app, select **Load failure-alert example → Predict and explain**. The score should be **0.990**. Open **What-if simulator**, move the rotational-speed slider, and check that the scenario score and explanation update.
-
 ## Files
 
 - `app.py`: the Streamlit interface and feature calculations.
 - `predictive_maintenance.joblib`: the original uploaded model bundle, unchanged.
 - `requirements.txt`: the package versions used to test the app, including SHAP and Plotly.
 - `README.md`: these instructions.
-
-## Deploy using Streamlit Community Cloud
-
-1. Extract the ZIP on your computer.
-2. Create a GitHub repository called `predictive-maintenance-app` in your account. Choose the repository visibility appropriate for your project.
-3. Upload the four extracted files into the repository root and commit them. Upload the files themselves, not the ZIP. `app.py`, `requirements.txt` and the model must be beside each other.
-4. Open https://share.streamlit.io/ and sign in. Connect the GitHub account that owns the repository.
-5. Select **Create app**, then **Yup, I have an app** if prompted.
-6. Select the repository, its branch (usually `main`), and `app.py` as the main file path.
-7. In **Advanced settings**, choose **Python 3.12**. No secrets or API keys are required by this app.
-8. Deploy and wait for the app to start. Check the app's sharing setting before distributing the link. Deployment produces a `streamlit.app` URL.
-9. Select **Load failure-alert example**, then **Predict and explain**. Expect a score of **0.990**, a **Failure alert**, and interactive SHAP charts.
-
-An account connection and repository access are needed to complete deployment. This ZIP alone does not create a live website.
-
-## Run on your own computer
-
-Install Python 3.12, open a terminal in the extracted folder, and run:
-
-```bash
-python -m venv .venv
-```
-
-On Windows PowerShell, activate the environment with:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-On macOS or Linux, use:
-
-```bash
-source .venv/bin/activate
-```
-
-Then run:
-
-```bash
-python -m pip install -r requirements.txt
-python -m streamlit run app.py
-```
 
 ## Model and validation notes
 
